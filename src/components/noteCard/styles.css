@@ -1,0 +1,13 @@
+.container {
+  border-radius: 8px;
+  padding: 8px;
+  width: 200px;
+  min-height: 220px;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  width: fit-content;
+  display: flex;
+}

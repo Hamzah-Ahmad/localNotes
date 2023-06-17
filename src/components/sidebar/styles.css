@@ -1,0 +1,100 @@
+
+.search__icon {
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+.close__btn {
+  font-size: 20px;
+  color: #121212;
+  position: absolute;
+  right: 16px;
+  top: 24px;
+  background-color: transparent;
+  color: #f2f2f2;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  visibility: hidden;
+  font-weight: bolder;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 24px;
+}
+
+.create_btn {
+  background-color: #121212;
+  color: #f2f2f2;
+  border: none;
+  padding: 12px 8px;
+  border-radius: 8px;
+  border: 1px solid #f2f2f2;
+  cursor: pointer;
+
+}
+.filter__group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 12px;
+
+}
+.filter__input {
+  background-color: #121212;
+  border: none;
+  /* padding-bottom: 16px; */
+  padding-left: 32px;
+  outline:none;
+  color: #f2f2f2;
+
+}
+
+.sidebar {
+  min-height: 100vh;
+  width: 20%;
+  padding-top: 48px;
+  background-color: #121212;
+  /* background-color: red; */
+  z-index: 999;
+  position: relative;
+  /* color: #fff; */
+  transition: all 0.25s linear;
+}
+
+.sidebar__item {
+  border-top: 1px solid #f2f2f2;
+  color: #f2f2f2;
+  padding: 16px;
+  font-weight: bolder;
+
+}
+
+.sidebar__item:hover {
+  background-color: #f2f2f2;
+  color: #121212;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1100px) {
+  .close__btn {
+   visibility: visible;
+  }
+
+  .sidebar {
+    position: absolute;
+    width: 100%;
+
+  }
+
+  .sidebar.collapsed {
+    transform: translateX(-100vw);
+  }
+
+  
+}

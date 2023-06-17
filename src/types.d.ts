@@ -1,5 +1,6 @@
 type Note = {
     id: string;
+    title: string;
     text?: string;
     code?: string;
 }

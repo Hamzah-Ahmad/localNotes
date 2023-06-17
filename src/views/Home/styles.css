@@ -1,0 +1,25 @@
+.open__btn {
+  visibility: hidden;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  margin-left: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.page__container {
+  display: flex;
+}
+
+.note__section {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .note__section {
+    /* opacity: 0.1; */
+  }
+  .open__btn {
+    visibility: visible;
+  }
+}
