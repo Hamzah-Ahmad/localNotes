@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsCheck, BsSearch, BsTrash, BsX } from "react-icons/bs";
+import { BsCheck, BsPencilFill, BsSearch, BsTrash, BsX } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 
 import "./styles.css";
@@ -77,7 +77,7 @@ const Sidebar = ({
           <BsSearch className="search__icon" />
         </div>
         <button className="create_btn" onClick={createNewItem}>
-          Create
+          Create <BsPencilFill />
         </button>
       </div>
       <div className="sidebar__items__list">
