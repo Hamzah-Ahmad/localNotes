@@ -29,7 +29,7 @@ const Sidebar = ({
 
   function handleDelete(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.stopPropagation();
-    if(!itemToDelete) return;
+    if (!itemToDelete) return;
     deleteItem(itemToDelete!);
   }
 
@@ -99,7 +99,9 @@ const Sidebar = ({
               </div>
             ) : (
               <div className="space__between align__center">
-                {note.title ? note.title : <em>Enter a title</em>}
+                <div className="sidebar__item__title">
+                  {note.title ? note.title : <em>Enter a title</em>}
+                </div>
                 <button
                   className="trash__btn"
                   onClick={(e) => handleSettingItemToDelete(e, note.id)}

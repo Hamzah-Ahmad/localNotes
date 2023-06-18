@@ -15,7 +15,7 @@ const Home = ({ notes, setNotes }: HomeProps) => {
   const [noteId, setNoteId] = useState<string | null>(
     () => notes[0]?.id || null
   );
-  const [collapseSidebar, setCollapseSidebar] = useState(false);
+  const [collapseSidebar, setCollapseSidebar] = useState(true);
 
   function selectItem(id: string) {
     setCollapseSidebar(true);
@@ -68,7 +68,7 @@ const Home = ({ notes, setNotes }: HomeProps) => {
           <div className="intro__section">
             <div className="title">Welcome to LocalNotes!</div>
             <div className="subtitle">Click the <strong>Create</strong> button on the sidebar to create your first note</div>
-            <div className="subtitle">All notes are saved automatically to your borwser's storage</div>
+            <div className="subtitle">All notes are saved automatically to your browser's storage</div>
           </div>
         )}
       </div>
