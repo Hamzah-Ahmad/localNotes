@@ -1,4 +1,4 @@
-import { useState, Dispatch, SetStateAction, useEffect } from "react";
+import { useState, Dispatch, SetStateAction, useEffect, useMemo } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -23,7 +23,6 @@ function Note({ id, notes, setNotes }: NotesProps) {
     (note) => note.id === id
   );
 
-  console.log('foundNote: ', foundNote)
 
   const [mode, setMode] = useState<Mode>("Text");
   const [text, setText] = useState(REACT_QUILL_DEFAULT);
@@ -31,7 +30,6 @@ function Note({ id, notes, setNotes }: NotesProps) {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    if(!title ) return
     updateNote(id, {
       id,
       title: title,
@@ -80,13 +78,14 @@ function Note({ id, notes, setNotes }: NotesProps) {
       setText(REACT_QUILL_DEFAULT);
       setCode("");
     }
-  }, [foundNote]);
+  }, [foundNote?.id]);
 
   return (
     <div className="note__container">
       <div className="header__container">
         <input
           type="text"
+          placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target?.value)}
         />
@@ -102,7 +101,6 @@ function Note({ id, notes, setNotes }: NotesProps) {
           theme="snow"
           value={text}
           onChange={setText}
-          defaultValue={""}
           modules={{
             toolbar: [
               [{ header: [1, 2, false] }],

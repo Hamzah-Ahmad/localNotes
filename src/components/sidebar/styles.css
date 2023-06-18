@@ -1,9 +1,7 @@
-
-.search__icon {
-  position: absolute;
-  left: 0;
-  color: #fff;
+.btn__row {
+  display: flex;
 }
+
 .close__btn {
   font-size: 20px;
   color: #121212;
@@ -24,6 +22,7 @@
   flex-direction: column;
   padding: 16px;
   gap: 24px;
+  margin-bottom: 24px;
 }
 
 .create_btn {
@@ -34,30 +33,38 @@
   border-radius: 8px;
   border: 1px solid #f2f2f2;
   cursor: pointer;
-
 }
 .filter__group {
   position: relative;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #f2f2f2;
-  padding-bottom: 12px;
-
+  /* border-bottom: 1px solid #f2f2f2; */
+  /* padding-bottom: 12px; */
 }
 .filter__input {
-  background-color: #121212;
+  background-color: #f2f2f2;
   border: none;
   /* padding-bottom: 16px; */
+  outline: none;
+  color: #121212;
+  padding: 10px;
   padding-left: 32px;
-  outline:none;
-  color: #f2f2f2;
+  border-radius: 16px;
+  width: 100%;
 
+}
+
+.search__icon {
+  position: absolute;
+  left: 0;
+  color: #121212;
+  margin-left: 8px;
 }
 
 .sidebar {
   min-height: 100vh;
   width: 20%;
-  padding-top: 48px;
+  padding-top: 24px;
   background-color: #121212;
   /* background-color: red; */
   z-index: 999;
@@ -67,34 +74,95 @@
 }
 
 .sidebar__item {
-  border-top: 1px solid #f2f2f2;
+  position: relative;
+  border-bottom: 1px solid #f2f2f2;
   color: #f2f2f2;
   padding: 16px;
   font-weight: bolder;
+}
 
+.sidebar__item.active {
+  background-color: #f2f2f2;
+  color: #121212;
+}
+.sidebar__item.active svg {
+  color: #121212;
+}
+
+.sidebar__item:last-of-type {
+  border-bottom: none;
 }
 
 .sidebar__item:hover {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2e0;
   color: #121212;
   font-weight: bolder;
   cursor: pointer;
 }
 
+.sidebar__item svg {
+  color: #f2f2f2;
+}
+.sidebar__item:hover svg {
+  color: #121212;
+}
+
+.sidebar__items__list {
+  height: 55%;
+  overflow-y: auto;
+}
+
+.trash__btn,
+.check__btn,
+.cross__btn {
+  border-radius: 100%;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+}
+
+.check__btn,
+.cross__btn {
+  height: 40px;
+  width: 40px;
+}
+
+.trash__btn svg {
+  height: 40px;
+  width: 40px;
+}
+.check__btn svg,
+.cross__btn svg {
+  height: 40px;
+  width: 40px;
+}
+
+.trash__btn:hover svg,
+.cross__btn:hover svg {
+  color: red !important;
+}
+
+.check__btn:hover svg {
+  color: green !important;
+}
+
 @media only screen and (max-width: 1100px) {
   .close__btn {
-   visibility: visible;
+    visibility: visible;
   }
 
   .sidebar {
     position: absolute;
     width: 100%;
-
+    padding-top: 48px;
   }
 
   .sidebar.collapsed {
     transform: translateX(-100vw);
   }
-
   
 }

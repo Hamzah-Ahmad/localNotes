@@ -1,3 +1,22 @@
+.intro__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #121212b3;
+}
+
 .open__btn {
   visibility: hidden;
   background-color: transparent;
@@ -21,5 +40,38 @@
   }
   .open__btn {
     visibility: visible;
+  }
+
+  .intro__section {
+    height: 50vh;
+  }
+
+  
+  .title {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #121212b3;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    padding: 0 16px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #121212b3;
+    padding: 0 16px;
+
   }
 }
