@@ -6,21 +6,18 @@ import "./styles.css";
 
 type SidebarProps = {
   notes: Notes;
-  selectItem: (item: string) => void;
-  createNewItem: () => void;
-  // filterTerm: string;
-  // setFilterTerm: Dispatch<SetStateAction<string>>;
-  closeSidebar: any;
-  isCollapsed: any;
+  isCollapsed: boolean;
   noteId: string | null;
-  deleteItem: any;
+  createNewItem: () => void;
+  closeSidebar: () => void;
+  deleteItem: (id: string) => void;
+  selectItem: (item: string) => void;
 };
+
 const Sidebar = ({
   createNewItem,
   notes,
-  // filterTerm,
   selectItem,
-  // setFilterTerm,
   closeSidebar,
   isCollapsed,
   noteId,
@@ -32,7 +29,8 @@ const Sidebar = ({
 
   function handleDelete(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.stopPropagation();
-    deleteItem(itemToDelete);
+    if(!itemToDelete) return;
+    deleteItem(itemToDelete!);
   }
 
   function cancelDelete(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {

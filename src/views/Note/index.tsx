@@ -59,8 +59,6 @@ function Note({ id, notes, setNotes }: NotesProps) {
   }
 
   function toggleMode() {
-    console.log("B");
-
     if (mode === "Text") {
       setMode("Code");
     } else {
