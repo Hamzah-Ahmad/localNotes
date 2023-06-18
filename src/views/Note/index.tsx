@@ -1,4 +1,4 @@
-import { useState, Dispatch, SetStateAction, useEffect } from "react";
+import { useState, Dispatch, SetStateAction, useEffect, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -23,11 +23,11 @@ function Note({ id, notes, setNotes }: NotesProps) {
     (note) => note.id === id
   );
 
-
   const [mode, setMode] = useState<Mode>("Text");
   const [text, setText] = useState(REACT_QUILL_DEFAULT);
   const [code, setCode] = useState("");
   const [title, setTitle] = useState("");
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     updateNote(id, {
@@ -75,6 +75,10 @@ function Note({ id, notes, setNotes }: NotesProps) {
       setTitle("");
       setText(REACT_QUILL_DEFAULT);
       setCode("");
+
+      if (inputRef) {
+        inputRef.current?.focus();
+      }
     }
   }, [foundNote?.id]);
 
@@ -85,6 +89,7 @@ function Note({ id, notes, setNotes }: NotesProps) {
           type="text"
           placeholder="Title"
           value={title}
+          ref={inputRef}
           onChange={(e) => setTitle(e.target?.value)}
         />
         <div className="header__controls">
