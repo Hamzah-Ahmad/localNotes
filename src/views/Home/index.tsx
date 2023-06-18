@@ -1,5 +1,5 @@
 import Sidebar from "../../components/Sidebar";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { GiHamburgerMenu } from "react-icons/gi";
 

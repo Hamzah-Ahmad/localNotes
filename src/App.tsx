@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
 import useLocalStorage from "./hooks/useLocalStorage";
 import { NOTES } from "./constants";
-import Note from "./views/Note";
 
 function App() {
   const [notes, setNotes] = useLocalStorage<Notes>(NOTES, []);
