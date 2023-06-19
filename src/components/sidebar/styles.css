@@ -54,7 +54,6 @@
   padding-left: 32px;
   border-radius: 16px;
   width: 100%;
-
 }
 
 .search__icon {
@@ -85,10 +84,10 @@
 }
 
 .sidebar__item__title {
-    width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebar__item.active {
@@ -173,5 +172,9 @@
   .sidebar.collapsed {
     transform: translateX(-100vw);
   }
-  
+
+  .sidebar__items__list {
+    height: 400px;
+    overflow-y: auto;
+  }
 }
